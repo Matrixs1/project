@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+<div class="m-4 p-4">
+  <br><br><br><br>
+{% if request.user.is_authenticated %}
+<div class="container text-center">
+<br><br>
+  <h3>Welcome {{user.username}} <a href="{% url 'logout' %}">Logout</a></h3>
+</div>
+
+{% else %}
+<form method="POST">
+  {% csrf_token %}
+    <br><br>
+
+    
+    <div class="mb-3">
+      {% include '_messages.html' %}
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" required value="{{firstname}}" name="firstname" class="form-control" id="firstname">
+       
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" required value="{{lastname}}" name="lastname" class="form-control" id="lastname">
+       
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input type="text" required value="{{username}}" name="username" class="form-control" id="username">
+       
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" required value="{{email}}" name="email" class="form-control" id="exampleInputEmail1">
+     
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" required value="{{password}}" name="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" name="terms"  class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Do you agree to all terms</label>
+    </div>
+    <button type="submit" name="save" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  {% endif %}
+  {% endblock content %}
+ 

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- ======= Departments Section ======= -->
+  <section id="departments" class="departments">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Departments</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{dept1.id}}">{{dept1.name}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-{{dept2.id}}">{{dept2.name}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-{{dept3.id}}">{{dept3.name}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-{{dept4.id}}">{{dept4.name}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-{{dept5.id}}">{{dept5.name}}</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="col-lg-9">
+          <div class="tab-content">
+
+            <div class="tab-pane active show" id="tab-{{dept1.id}}">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>{{dept1.name}}</h3>
+                  <p>{{dept1.discription}}</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{dept1.photos.url}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-{{dept2.id}}">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>{{dept2.name}}</h3>
+                  <p>{{dept2.discription}}</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{dept2.photos.url}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tab-pane" id="tab-{{dept3.id}}">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>{{dept3.name}}</h3>
+                  <p>{{dept3.discription}}</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{dept3.photos.url}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="tab-{{dept4.id}}">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>{{dept4.name}}</h3>                   
+                  <p>{{dept4.discription}}</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{dept4.photos.url}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-{{dept5.id}}">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>{{dept5.name}}</h3>                    
+                  <p>{{dept5.discription}}</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{dept5.photos.url}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            
+
+           </div> 
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Departments Section -->
+{% endblock content %}
+
+

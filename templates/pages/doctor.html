@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <!-- ======= Doctors Section ======= -->
+ <section id="doctors" class="doctors">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Doctors</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+
+        {% for z in doc %}
+        <div class="col-lg-6">
+          <div class="member d-flex align-items-start">
+            <div class="pic"><img src="{{z.photos.url}}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>{{z.name}}</h4>
+              <span>{{z.department_id.name}}</span>
+              <p>{{z.discription}}</p>
+              <div class="social">
+                <a href="{{z.twitter}}"><i class="ri-twitter-fill"></i></a>
+                <a href="{{z.facebook}}"><i class="ri-facebook-fill"></i></a>
+                <a href="{{z.instagram}}"><i class="ri-instagram-fill"></i></a>
+                <a href="{{z.linkedin}}"> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+       
+
+
+      </div>
+
+    </div>
+  </section><!-- End Doctors Section -->
+
+{% endblock content %}
+
+
+
